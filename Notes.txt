@@ -1,0 +1,16 @@
+this helps in fetching request and also handle errors and loading states
+function that define the actual code that will be executed that will send the actual request
+ is passed to queryFn
+
+Tanstack query handles data error caching and other.
+here queryFn is provided with function that returns the promise.
+queryKey is used to cache the fetched data to not refetch the data from server every time page reloads
+but re-fetched internally and if there is a change in loaded data than that data is silently changed.
+array of queryKey is used to check if called queryKey has same key as fetched query key than it gives query's cached data.
+isError will work if error is thrown whenever we get error in data fetching function.
+
+Tanstack Query helps to automatically update the data on the ui when any data changes in the backend
+also if we move away from the site than a fetch query again will will be sent when we move back to the react application.
+
+disabled is set to searchTerm !== undefined and initial value of searchTerm is undefined so that initially
+the find section does not contain anything then when we even if we search find with empty string that shows all events.
